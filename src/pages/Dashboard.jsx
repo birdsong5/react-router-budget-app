@@ -13,7 +13,12 @@ export function dashboardLoader() {
 const Dashboard = () => {
   const { userName } = useLoaderData();
 
-  return <div>Dashboard</div>;
+  return (
+    <div>
+      <h1>{userName}</h1>
+      <p>Dashboard</p>
+    </div>
+  );
 };
 
 export default Dashboard;
