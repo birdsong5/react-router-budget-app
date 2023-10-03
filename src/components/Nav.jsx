@@ -4,14 +4,17 @@ import { Form, NavLink } from "react-router-dom";
 //assets
 import logomark from "../assets/logomark.svg";
 
-const Nav = ({ username }) => {
+//library
+import { TrashIcon } from "@heroicons/react/24/solid";
+
+const Nav = ({ userName }) => {
   return (
     <nav>
       <NavLink to="/" aria-label="Go to home">
         <img src={logomark} alt="" height={30} />
         <span>HomeBudget</span>
       </NavLink>
-      {username && (
+      {userName && (
         <Form
           method="post"
           action="/logout"
@@ -23,6 +26,7 @@ const Nav = ({ username }) => {
         >
           <button type="submit" className="btn btn--warning">
             <span>Delete User</span>
+            <TrashIcon width={20} />
           </button>
         </Form>
       )}
