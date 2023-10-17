@@ -6,6 +6,7 @@ import { fetchData } from "../helpers";
 
 //components
 import Intro from "../components/Intro";
+import AddBudgetForm from "../components/AddBudgetForm";
 
 //library imports
 import { toast } from "react-toastify";
@@ -43,7 +44,9 @@ const Dashboard = () => {
           <div className="frid-sm">
             {/* {budgets ? () : ()} */}
             <div className="grid-lg">
-              <div className="flex-lg"></div>
+              <div className="flex-lg">
+                <AddBudgetForm />
+              </div>
             </div>
           </div>
         </div>
