@@ -6,7 +6,7 @@ import { Form } from "react-router-dom";
 const AddBudgetForm = () => {
   return (
     <div className="form-wrapper">
-      <h2 className="h3">Creat budget</h2>
+      <h2 className="h3">Create budget</h2>
       <Form method="post" className="grid-sm">
         <div className="grid-xs">
           <label htmlFor="newBudget">Budget Name</label>
@@ -30,6 +30,7 @@ const AddBudgetForm = () => {
             inputMode="decimal"
           />
         </div>
+        <input type="hidden" name="_action" value="createBudget" />
         <button type="submit" className="btn btn--dark">
           <span>Create budget</span>
           <CurrencyDollarIcon width={20} />
