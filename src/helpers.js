@@ -1,3 +1,7 @@
+export const waait = () =>
+  new Promise((res) => setTimeout(res, Math.random() * 1000));
+
+//colors
 const generateRandomColor = () => {
   const existingBudgetsLength = fetchData("budgets")?.length ?? 0;
   return `${existingBudgetsLength * 34} 65% 50%`;
