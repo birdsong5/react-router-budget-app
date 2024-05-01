@@ -7,6 +7,7 @@ import { createBudget, fetchData, waait } from "../helpers";
 //components
 import Intro from "../components/Intro";
 import AddBudgetForm from "../components/AddBudgetForm";
+import AddExpenseForm from "../components/AddExpenseForm";
 
 //library imports
 import { toast } from "react-toastify";
