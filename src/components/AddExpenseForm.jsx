@@ -1,5 +1,5 @@
 //react imports
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 //library imports
 import { PlusCircleIcon } from "@heroicons/react/24/solid";
@@ -14,6 +14,15 @@ const AddExpenseForm = ({ budgets }) => {
 
   const formRef = useRef();
   const focusRef = useRef();
+
+  useEffect(() => {
+    if (!isSubmitting) {
+      //clear form
+      formRef.current.reset();
+      //reset focus
+      focusRef.current.focus();
+    }
+  }, [isSubmitting]);
 
   return (
     <div className="form-wrapper">
