@@ -9,6 +9,7 @@ import Intro from "../components/Intro";
 import AddBudgetForm from "../components/AddBudgetForm";
 import AddExpenseForm from "../components/AddExpenseForm";
 import BudgetItem from "../components/BudgetItem";
+import Table from "../components/Table";
 
 //library imports
 import { toast } from "react-toastify";
@@ -92,6 +93,11 @@ const Dashboard = () => {
                 {expenses && expenses.length > 0 && (
                   <div className="grid-md">
                     <h2>Recent expenses</h2>
+                    <Table
+                      expenses={expenses.sort(
+                        (a, b) => b.createdAt - a.createdAt
+                      )}
+                    />
                   </div>
                 )}
               </div>
