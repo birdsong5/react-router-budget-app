@@ -30,7 +30,7 @@ const ExpenseItem = ({ expense }) => {
         </Link>
       </td>
       <td>
-        <fetcher.Form>
+        <fetcher.Form method="post">
           <input type="hidden" name="_action" value="deleteExpense" />
           <input type="hidden" name="expenseId" value={expense.id} />
           <button
