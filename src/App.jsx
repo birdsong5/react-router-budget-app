@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 //Routes
 import Dashboard, { dashboardAction, dashboardLoader } from "./pages/Dashboard";
-import BudgetPage from "./pages/Budgetpage";
+import BudgetPage, { budgetLoader } from "./pages/Budgetpage";
 import Error from "./pages/Error";
 import ExpensesPage, {
   expensesAction,
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
       {
         path: "budget/:id",
         element: <BudgetPage />,
-        //loader: expensesdLoader,
+        loader: budgetLoader,
         //action: expensesAction,
       },
       {
