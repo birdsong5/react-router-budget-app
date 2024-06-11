@@ -40,6 +40,11 @@ const router = createBrowserRouter([
         loader: budgetLoader,
         action: budgetAction,
         errorElement: <Error />,
+        children: [
+          {
+            path: "delete",
+          },
+        ],
       },
       {
         path: "expenses",

@@ -9,7 +9,7 @@ import {
 } from "../helpers";
 
 // library imports
-import { BanknotesIcon } from "@heroicons/react/24/outline";
+import { BanknotesIcon, TrashIcon } from "@heroicons/react/24/outline";
 
 const BudgetItem = ({ budget, showDelete = false }) => {
   const { id, name, amount, color } = budget;
@@ -29,14 +29,33 @@ const BudgetItem = ({ budget, showDelete = false }) => {
         <small>{formatCurrency(amount - spent)} remaining</small>
       </div>
       {showDelete ? (
-        <Form>
-          <p>Hi</p>
-        </Form>
+        <div className="flex-sm">
+          <Form
+            method="post"
+            action="delete"
+            onSubmit={(event) => {
+              if (
+                !confirm(
+                  "Are you sure you want to permanently delete this budget?"
+                )
+              ) {
+                event.preventDefault();
+              }
+            }}
+          >
+            <button type="submit" className="btn">
+              <span>Delete Budget</span>
+              <TrashIcon width={20} />
+            </button>
+          </Form>
+        </div>
       ) : (
-        <Link to={`/budget/${id}`} className="btn">
-          <span>View Details</span>
-          <BanknotesIcon width={20} />
-        </Link>
+        <div className="flex-sm">
+          <Link to={`/budget/${id}`} className="btn">
+            <span>View Details</span>
+            <BanknotesIcon width={20} />
+          </Link>
+        </div>
       )}
     </div>
   );
